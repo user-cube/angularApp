@@ -33,20 +33,22 @@ Primeiro adicionar o express às dependências:
 npm install --save express path
 ```
 Depois alterar o package.json adicionando aos scripts o postinstall e mudar o start conforme o seguinte:
-````json
-{"scripts": {
+```json
+{
+  "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "debug": "ng serve",
     "postinstall": "ng build --prod"
   }
 }
-````
+```
 Após isso criar o ficheiro server.js com o seguinte:
-````javascript
+```javascript
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -61,4 +63,4 @@ app.get('/*', function(req, res) {
 
 // default Heroku PORT
 app.listen(process.env.PORT || 4200);
-```` 
+```
