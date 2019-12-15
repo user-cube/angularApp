@@ -6,9 +6,17 @@
   <br>
   <div class="row">
     <div *ngFor="let item of items" class="col-md-3 offset-1">
-      {{item.titulo}}
       <div class="card" style="width: border-box">
-        <img class="card-img-top" src="{{url}}{{item.picture.substring(4, item.picture.length)}}">
+        <div class="box">
+          <img class="card-img-top" src="{{url}}{{item.picture.substring(4, item.picture.length)}}"
+               style="height: 280px"
+               alt="{{ item.titulo }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.titulo }}</h5>
+            <p class="card-text">{{ item.short }}</p>
+            <a href="/infoItem?titulo={{ item.id }}" class="btn btn-primary">Ver mais</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
