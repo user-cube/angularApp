@@ -4,4 +4,12 @@
     <button type="submit"><i class="fa fa-search"></i></button>
   </form>
   <br>
+  <div class="row">
+    <div *ngFor="let item of items" class="col-md-3 offset-1">
+      {{item.titulo}}
+      <div class="card" style="width: border-box">
+        <img class="card-img-top" src="{{url}}{{item.picture.substring(4, item.picture.length)}}">
+      </div>
+    </div>
+  </div>
 </div>

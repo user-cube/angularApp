@@ -3,5 +3,5 @@ export class Items {
   descricao: string;
   short: string;
   preco: number;
-  // picture
+  picture: string;
 }
