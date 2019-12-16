@@ -13,7 +13,9 @@ const httpOptions = {
 export class HomeService {
 
   private baseUrl = 'https://tpw-api.herokuapp.com';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
+
 
   getItems(): Observable<Items[]> {
     return this.http.get<Items[]>(this.baseUrl + '/items/all');

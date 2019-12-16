@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ItemDetailsComponent } from './item-details/item-details.component'
-import { HomeComponent } from './home/home.component'
+import { ItemDetailsComponent } from './item-details/item-details.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  exports:[
+  exports: [
     RouterModule
   ],
   declarations: [],
