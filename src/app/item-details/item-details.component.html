@@ -13,14 +13,14 @@
       <h1 style="text-align: center">{{ details.titulo }}</h1>
     </div>
     <div class="col-lg-1">
-      <form action="addcart" method='post' >
+      <form (ngSubmit)="onSubmit() " #addCart="ngForm">
         <input name='id' value="{{ details.id }}" hidden>
         <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i></button>
       </form>
 
     </div>
     <div class="col-lg-1">
-      <form action="buyitem" method='post'>
+      <form (ngSubmit)="purchase()" #addCart="ngForm">
         <input name='id' value="{{ details.id }}" hidden>
         <button type="submit" class="btn btn-success"><i class="fa fa-credit-card"></i></button>
       </form>

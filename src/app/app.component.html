@@ -19,6 +19,19 @@
             <a class="nav-link" href="#">Find Us</a>
           </li>
         </ul>
+        <ul *ngIf="authenticated" class="nav navbar-nav navbar-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button"
+               data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false" style="font-size:22px;"><i
+              class="fa fa-fw fa-shopping-cart"></i>
+            </a>
+            <div class="dropdown-menu" style="right: 0; left: auto;" aria-labelledby="navbarDropdown">
+              <app-cart-partial></app-cart-partial>
+            </div>
+          </li>
+        </ul>
+      <app-login-partial></app-login-partial>
       </div>
     </div>
   </nav>
