@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 
 export class AuthService {
-  endpoint = 'http://tpw-api.herokuapp.com';
+  endpoint = 'https://tpw-api.herokuapp.com';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
 
