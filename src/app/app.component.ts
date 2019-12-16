@@ -13,8 +13,16 @@ export class AppComponent {
   constructor(public authService: AuthService) { }
   title = 'XPTO Store';
   year = (new Date()).getFullYear();
+  nome = getName();
 
-  nome = this.getDecodedAccessToken(localStorage.getItem('access_token')).username;
+  getName(){
+    try {
+      const nome = this.getDecodedAccessToken(localStorage.getItem('access_token')).username;
+      return nome;
+    } catch (e) {
+      return '';
+    }
+  }
 
   getDecodedAccessToken(token: string): any {
     try {
