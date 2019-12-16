@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Items} from '../items';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {Encomenda} from '../encomenda';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +10,11 @@ import {BehaviorSubject} from 'rxjs';
 export class CartPartialService {
 
   products: Items[] = [];
+  private baseUrl = 'https://tpw-api.herokuapp.com';
 
   productObs: BehaviorSubject<Items[]> = new BehaviorSubject<Items[]>([]);
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getLocalStorage() {
     const ret: Items[] = [];
@@ -28,6 +31,11 @@ export class CartPartialService {
   update(item) {
     this.products.push(item);
     this.productObs.next(this.products);
+  }
+
+  checkout() {
+    // this.products is the product list that the user wants to buy
+    console.log('Checkout');
   }
 
   delete(index) {
