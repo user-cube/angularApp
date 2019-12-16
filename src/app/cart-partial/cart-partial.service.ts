@@ -31,10 +31,9 @@ export class CartPartialService {
   }
 
   delete(index) {
-    const prods = JSON.parse(localStorage.getItem('items'));
-    this.products = prods;
+    this.products = JSON.parse(localStorage.getItem('items'));
     this.products.splice(index, 1);
-    localStorage.setItem('items', JSON.stringify(prods.splice(index, 1)));
+    localStorage.setItem('items', JSON.stringify(this.products));
     this.productObs.next(this.products);
   }
 
