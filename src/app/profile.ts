@@ -1,8 +1,12 @@
 export class Profile {
-  nome: string;
+  id: number;
   user: string;
-  morada: string;
-  zip: string;
+  // tslint:disable-next-line:variable-name
+  first_name: string;
+  // tslint:disable-next-line:variable-name
+  last_name: string;
+  picture: string;
   pais: string;
-  // picture
+  morada: string;
+  zipcode: string;
 }
