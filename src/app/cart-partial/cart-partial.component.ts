@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Items} from '../items';
+import {CartPartialService} from './cart-partial.service';
 
 @Component({
   selector: 'app-cart-partial',
@@ -10,18 +11,26 @@ export class CartPartialComponent implements OnInit {
 
   products: Items[] = [];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private cartService: CartPartialService) {
     this.getProducts();
   }
 
-  getProducts() {
-    const prods = JSON.parse(localStorage.getItem('items'));
+  ngOnInit() {
+    this.getSavedProducts();
+  }
 
-    for (const i of prods) {
-      this.products.push(JSON.parse(i));
-    }
+  onDelete(index) {
+    this.cartService.delete(index);
+  }
+
+  getSavedProducts() {
+    this.products = this.cartService.getLocalStorage();
+  }
+
+  getProducts() {
+    this.cartService.productObs.subscribe(next => {
+      this.products = this.cartService.getLocalStorage();
+    });
   }
 
 }
