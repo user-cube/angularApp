@@ -1,3 +1,12 @@
+<div class="jumbotron"
+     *ngIf="details.picture"
+     [style.background-image]="'url(' + url + details.picture.substring(4, details.picture.length) + ')'"
+     style="background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 400px;"
+>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-lg-9 offset-1">

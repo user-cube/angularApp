@@ -11,6 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ItemDetailsComponent implements OnInit {
 
   details: Items;
+  url = 'https://tpw-api.herokuapp.com/';
 
   constructor(private route: ActivatedRoute, private detailsService: ItemDetailsService) {}
 
