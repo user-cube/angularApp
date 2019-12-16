@@ -19,15 +19,7 @@
             <a class="nav-link" [routerLink]="['/contact']">Find Us</a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-            <a class="nav-link" href="#">Log in</a>
-          </li>
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-          </li>
-        </ul>
-        <ul *ngIf="authenticated" class="nav navbar-nav navbar-right">
+        <ul *ngIf="isLoggedIn()" class="nav navbar-nav navbar-right">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button"
                data-toggle="dropdown"
@@ -38,8 +30,25 @@
               <app-cart-partial></app-cart-partial>
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false"> {{nome}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/profile">Perfil</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" (click)="Logout()" *ngIf="this.authService.isLoggedIn">Logout</a>
+            </div>
+          </li>
         </ul>
-      <app-login-partial></app-login-partial>
+        <ul class="nav navbar-nav navbar-right" *ngIf="!isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
