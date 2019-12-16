@@ -9,6 +9,8 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
 import { LoginPartialComponent } from './login-partial/login-partial.component';
 import { CartPartialComponent } from './cart-partial/cart-partial.component';
 import {FormsModule} from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { FindComponent } from './find/find.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {FormsModule} from '@angular/forms';
     HomeComponent,
     ItemDetailsComponent,
     LoginPartialComponent,
-    CartPartialComponent
+    CartPartialComponent,
+    AboutComponent,
+    FindComponent,
   ],
   imports: [
     BrowserModule,
