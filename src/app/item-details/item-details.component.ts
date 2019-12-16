@@ -26,15 +26,7 @@ export class ItemDetailsComponent implements OnInit {
   }
 
   onSubmit() {
-    // Save item in localStorage
-    const items = JSON.parse(localStorage.getItem('items'));
-    if (items !== null) {
-      items.push(JSON.stringify(this.details));
-      localStorage.setItem('items', JSON.stringify(items));
-    } else {
-      const toAdd = JSON.stringify(this.details);
-      localStorage.setItem('items', JSON.stringify([toAdd]));
-    }
+    this.detailsService.saveItem(this.details);
     // Update Observable
     this.cartService.update(this.details);
   }

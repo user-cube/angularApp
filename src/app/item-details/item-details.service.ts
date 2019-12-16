@@ -12,6 +12,18 @@ export class ItemDetailsService {
 
   constructor(private http: HttpClient) { }
 
+  saveItem(item) {
+    // Save item in localStorage
+    const items = JSON.parse(localStorage.getItem('items'));
+    if (items !== null) {
+      items.push(JSON.stringify(item));
+      localStorage.setItem('items', JSON.stringify(items));
+    } else {
+      const toAdd = JSON.stringify(item);
+      localStorage.setItem('items', JSON.stringify([toAdd]));
+    }
+  }
+
   getItemDetails(id: number): Observable<Items> {
     return this.http.get<Items>(this.baseUrl + '/items/info/' + id);
   }
