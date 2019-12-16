@@ -1,5 +1,5 @@
 <div class="jumbotron"
-     *ngIf="details.picture"
+     *ngIf="details"
      [style.background-image]="'url(' + url + details.picture.substring(4, details.picture.length) + ')'"
      style="background-size: cover;
       background-repeat: no-repeat;
@@ -7,13 +7,13 @@
       height: 400px;"
 >
 </div>
-<div class="container">
+<div class="container" *ngIf="details">
   <div class="row">
     <div class="col-lg-9 offset-1">
       <h1 style="text-align: center">{{ details.titulo }}</h1>
     </div>
     <div class="col-lg-1">
-      <form action="addcart" method='post'>
+      <form action="addcart" method='post' >
         <input name='id' value="{{ details.id }}" hidden>
         <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i></button>
       </form>
