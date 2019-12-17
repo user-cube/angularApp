@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Items} from '../items';
 import {CartPartialService} from '../cart-partial/cart-partial.service';
 import {BehaviorSubject} from 'rxjs';
+import {Encomenda} from '../encomenda';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -26,7 +27,13 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   onCheckout() {
-    this.cartService.checkout();
+    for (const item of this.shoppingBag) {
+      // TODO - Change user to actual user
+      const encomenda = new Encomenda(new Date(), item.id, 'User', 1, item.preco, this.total);
+      this.cartService.checkout(encomenda).subscribe();
+    }
+    this.cartService.deleteAll();
+    this.total = 0;
   }
 
   getStorage() {
