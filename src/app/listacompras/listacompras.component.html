@@ -7,7 +7,7 @@
 <br>
 
 
-<div class="table-responsive" *ngFor="let row of compras">
+<div class="table-responsive">
   <table class="table">
     <thead>
     <tr>
@@ -19,8 +19,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td><a href="/infoItem?titulo={{ row.produtos }}"></a></td>
+    <tr  *ngFor="let row of compras">
+      <td><a href="/infoItem/{{ row.produtos }}">{{row.produtos}}</a></td>
       <td>{{ row.quantidade }}</td>
       <td>{{ row.preco }}</td>
       <td>{{ row.total }}</td>
