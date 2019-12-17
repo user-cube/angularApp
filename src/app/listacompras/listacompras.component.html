@@ -1,0 +1,31 @@
+<div class="col-lg-12">
+  <form class="example" action="/boughtSearch" method="get">
+    <input type="text" placeholder="Search.." name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div>
+<br>
+
+
+<div class="table-responsive" *ngFor="let row of compras">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total</th>
+      <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><a href="/infoItem?titulo={{ row.produtos }}">Ver como ter título</a></td>
+      <td>{{ row.quantidade }}</td>
+      <td>{{ row.preco }}</td>
+      <td>{{ row.total }}</td>
+      <td>{{ row.data }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
