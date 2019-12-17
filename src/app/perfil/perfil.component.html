@@ -3,7 +3,7 @@
     <img [src]='url+ perfil.picture.substring(4, perfil.picture.length)' class="img-responsive img-thumbnail ">
     <br>
     <br>
-    <a href="/profileedit" class="btn btn-success"><span
+    <a routerLink="/profileedit" class="btn btn-success"><span
       class="glyphicon glyphicon-thumbs-up"></span>
       Editar perfil</a>
   </div>
@@ -21,7 +21,7 @@
         <div class="col-lg-6">
           <div class="input-group">
             <input id="last_name" name="last_name" type="text"
-                   placeholder="Last Name" class="form-control input-lg" value="{{ perfil.first_name }}" readonly>
+                   placeholder="Last Name" class="form-control input-lg" value="{{ perfil.last_name }}" readonly>
           </div>
         </div>
       </div>
@@ -55,3 +55,4 @@
       </div>
     </form>
   </div>
+</div>

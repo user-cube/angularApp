@@ -10,6 +10,7 @@ import {PerfilComponent} from './perfil/perfil.component';
 import {AuthGuard} from './login.guard.spec';
 import {SigninComponent} from './signin/signin.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
+import {EditPerfilComponent} from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, },
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'perfil', component: PerfilComponent,  canActivate: [AuthGuard]},
   {path: 'login', component: SigninComponent},
   {path: 'shoppingcart', component: ShoppingCartComponent},
+  {path: 'profileedit', component: EditPerfilComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

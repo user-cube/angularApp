@@ -17,6 +17,8 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {EditPerfilComponent} from './edit-profile/edit-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     SignupComponent,
     SigninComponent,
     ShoppingCartComponent,
+    EditPerfilComponent
   ],
   imports: [
     BrowserModule,
