@@ -2,7 +2,11 @@ import { Injectable } from '@angular/core';
 import {Items} from '../items';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Encomenda} from '../encomenda';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({
   providedIn: 'root'
@@ -33,9 +37,8 @@ export class CartPartialService {
     this.productObs.next(this.products);
   }
 
-  checkout() {
-    // this.products is the product list that the user wants to buy
-    console.log('Checkout');
+  checkout(encomenda): Observable<Encomenda> {
+    return this.http.post<Encomenda>(this.baseUrl + '/encomendas/', encomenda, httpOptions);
   }
 
   delete(index) {
@@ -46,7 +49,9 @@ export class CartPartialService {
   }
 
   deleteAll() {
+    this.products = JSON.parse(localStorage.getItem('items'));
     this.products = [];
+    localStorage.setItem('items', JSON.stringify(this.products));
     this.productObs.next(this.products);
   }
 }
