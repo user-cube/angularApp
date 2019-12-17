@@ -21,7 +21,7 @@
   <tbody>
   <tr *ngFor="let row of compras">
     <td>{{ row.id }}</td>
-    <td><a href="/infoItem/{{ row.id }}" target="_blank">{{ row.id }}</a></td>
+    <td><a href="/infoItem/{{ row.id }}" target="_blank">{{ row.titulo }}</a></td>
     <td><a href="/edititem/{{ row.id }}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
     <td><a href="/admin/{{ row.id }}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
   </tr>

@@ -18,4 +18,8 @@ export class ListaService {
   getItems(): Observable<Encomenda[]> {
     return this.http.get<Encomenda[]>(this.baseUrl + '/encomendas');
   }
+
+  search(value): Observable<Encomenda[]> {
+    return this.http.get<Encomenda[]>(this.baseUrl + '/encomendas/' + value.search);
+  }
 }

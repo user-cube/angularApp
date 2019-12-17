@@ -11,6 +11,7 @@ export class Encomenda {
   constructor(data: Date, produtos: number, user: string, quantidade: number, preco: number, total: number) {
     this.data = data;
     this.prodid = produtos;
+    this.produtos = this.prodid.toString()
     this.user = user;
     this.quantidade = quantidade;
     this.preco = preco;

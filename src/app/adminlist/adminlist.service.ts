@@ -20,4 +20,8 @@ export class ListaAdminService {
   getItems(): Observable<Encomenda[]> {
     return this.http.get<Encomenda[]>(this.baseUrl + '/admin/encomendas');
   }
+
+  search(value): Observable<Encomenda[]> {
+    return this.http.get<Encomenda[]>(this.baseUrl + '/admin/encomendas/' + value.search);
+  }
 }
