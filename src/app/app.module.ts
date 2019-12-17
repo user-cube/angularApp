@@ -20,7 +20,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {EditPerfilComponent} from './edit-profile/edit-profile.component';
 import { ListacomprasComponent } from './listacompras/listacompras.component';
 import { AdminlistComponent } from './adminlist/adminlist.component';
-
+import {AdminpanelComponent} from './adminpanel/adminpanel.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { AdminlistComponent } from './adminlist/adminlist.component';
     EditPerfilComponent,
     ListacomprasComponent,
     AdminlistComponent,
+    AdminpanelComponent,
   ],
   imports: [
     BrowserModule,
