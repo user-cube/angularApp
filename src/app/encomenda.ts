@@ -1,6 +1,7 @@
 import {Items} from './items';
 
 export class Encomenda {
+  id: number;
   data: Date;
   produtos: number;
   user: string;
