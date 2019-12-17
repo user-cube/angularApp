@@ -1,0 +1,27 @@
+<table>
+  <thead>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of shoppingBag; let i = index" [attr.data-index]="i">
+    <td>{{ product.titulo }}</td>
+    <td>{{ product.preco }} €</td>
+    <td></td>
+    <td>
+      <form (ngSubmit)="onDelete(i)">
+        <button type="submit" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </form>
+    </td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td>{{ total }} €</td>
+    <td></td>
+    <td><a (click)="onCheckout()" class="btn btn-primary"> Checkout</a></td>
+  </tr>
+  </tbody>
+</table>

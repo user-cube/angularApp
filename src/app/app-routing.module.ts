@@ -9,6 +9,7 @@ import {FindComponent} from './find/find.component';
 import {PerfilComponent} from './perfil/perfil.component';
 import {AuthGuard} from './login.guard.spec';
 import {SigninComponent} from './signin/signin.component';
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'contact', component: FindComponent},
   {path: 'perfil', component: PerfilComponent,  canActivate: [AuthGuard]},
   {path: 'login', component: SigninComponent},
+  {path: 'shoppingcart', component: ShoppingCartComponent},
 ];
 
 @NgModule({
