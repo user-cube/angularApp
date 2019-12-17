@@ -20,4 +20,8 @@ export class PainelService {
   getItems(): Observable<AdminPanel[]> {
     return this.http.get<AdminPanel[]>(this.baseUrl + '/admin/');
   }
+
+  deleteItems(pan: AdminPanel): Observable<AdminPanel> {
+    return this.http.delete<AdminPanel>(this.baseUrl + '/admin/' + pan);
+  }
 }
