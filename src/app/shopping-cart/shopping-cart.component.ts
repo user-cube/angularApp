@@ -3,6 +3,8 @@ import {Items} from '../items';
 import {CartPartialService} from '../cart-partial/cart-partial.service';
 import {BehaviorSubject} from 'rxjs';
 import {Encomenda} from '../encomenda';
+import * as jwt_decode from 'jwt-decode';
+
 
 @Component({
   selector: 'app-shopping-cart',
@@ -26,10 +28,27 @@ export class ShoppingCartComponent implements OnInit {
     this.cartService.delete(index);
   }
 
+  getName() {
+    try {
+      const nome = this.getDecodedAccessToken(localStorage.getItem('access_token')).username;
+      return nome;
+    } catch (e) {
+      return '';
+    }
+  }
+
+  getDecodedAccessToken(token: string): any {
+    try {
+      return jwt_decode(token);
+    } catch (Error) {
+      return null;
+    }
+  }
+
   onCheckout() {
+    const user = this.getName();
     for (const item of this.shoppingBag) {
-      // TODO - Change user to actual user
-      const encomenda = new Encomenda(new Date(), item.id, 'User', 1, item.preco, this.total);
+      const encomenda = new Encomenda(new Date(), item.id, user, 1, item.preco, this.total);
       this.cartService.checkout(encomenda).subscribe();
     }
     this.cartService.deleteAll();
