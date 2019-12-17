@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Produtos} from '../../produtos';
 import {ListaService} from './lista.service';
+import {Encomenda} from '../encomenda';
 
 @Component({
   selector: 'app-listacompras',
@@ -9,7 +9,7 @@ import {ListaService} from './lista.service';
 })
 export class ListacomprasComponent implements OnInit {
 
-  compras: Produtos[];
+  compras: Encomenda[];
   url = 'https://tpw-api.herokuapp.com/';
 
   constructor(private listaService: ListaService) {

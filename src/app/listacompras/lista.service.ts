@@ -15,8 +15,6 @@ export class ListaService {
   private baseUrl = 'https://tpw-api.herokuapp.com';
   constructor(private http: HttpClient) {}
 
-
-
   getItems(): Observable<Encomenda[]> {
     return this.http.get<Encomenda[]>(this.baseUrl + '/encomendas');
   }

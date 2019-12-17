@@ -1,9 +1,8 @@
-import {Items} from './items';
-
 export class Encomenda {
   id: number;
   data: Date;
-  produtos: number;
+  produtos: string;
+  prodid: number;
   user: string;
   quantidade: number;
   preco: number;
@@ -11,7 +10,7 @@ export class Encomenda {
 
   constructor(data: Date, produtos: number, user: string, quantidade: number, preco: number, total: number) {
     this.data = data;
-    this.produtos = produtos;
+    this.prodid = produtos;
     this.user = user;
     this.quantidade = quantidade;
     this.preco = preco;
