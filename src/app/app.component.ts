@@ -40,6 +40,7 @@ export class AppComponent {
     } catch (Error) {
       decoded = false;
     }
+    return decoded;
   }
 
   isLoggedIn(): boolean {

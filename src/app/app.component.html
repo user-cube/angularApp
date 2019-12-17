@@ -23,6 +23,9 @@
           <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
             <a class="nav-link" [routerLink]="['/list']">Encomendas</a>
           </li>
+          <li *ngIf="isSuperUser()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link" [routerLink]="['/adminList']">Lista de vendas</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button"
                data-toggle="dropdown"

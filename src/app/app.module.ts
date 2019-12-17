@@ -19,6 +19,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import {EditPerfilComponent} from './edit-profile/edit-profile.component';
 import { ListacomprasComponent } from './listacompras/listacompras.component';
+import { AdminlistComponent } from './adminlist/adminlist.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ListacomprasComponent } from './listacompras/listacompras.component';
     ShoppingCartComponent,
     EditPerfilComponent,
     ListacomprasComponent,
+    AdminlistComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import {SigninComponent} from './signin/signin.component';
 import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {EditPerfilComponent} from './edit-profile/edit-profile.component';
 import {ListacomprasComponent} from './listacompras/listacompras.component';
+import {AdminlistComponent} from './adminlist/adminlist.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, },
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'login', component: SigninComponent},
   {path: 'shoppingcart', component: ShoppingCartComponent},
   {path: 'profileedit', component: EditPerfilComponent, canActivate: [AuthGuard]},
-  {path: 'list', component: ListacomprasComponent, canActivate: [AuthGuard]}
+  {path: 'list', component: ListacomprasComponent, canActivate: [AuthGuard]},
+  {path: 'adminList', component: AdminlistComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
