@@ -32,6 +32,16 @@ export class AppComponent {
     }
   }
 
+  isSuperUser() {
+    const token = localStorage.getItem('access_token');
+    let decoded = false;
+    try {
+      decoded = jwt_decode(token).is_superuser;
+    } catch (Error) {
+      decoded = false;
+    }
+  }
+
   isLoggedIn(): boolean {
     const authToken = localStorage.getItem('access_token');
     return (authToken !== null) ? true : false;
