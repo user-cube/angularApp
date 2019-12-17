@@ -5,7 +5,7 @@ export class Profile {
   first_name: string;
   // tslint:disable-next-line:variable-name
   last_name: string;
-  picture: string;
+  picture?: string;
   pais: string;
   morada: string;
   zipcode: string;

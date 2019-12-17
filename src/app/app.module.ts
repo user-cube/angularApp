@@ -33,7 +33,7 @@ import {EditPerfilComponent} from './edit-profile/edit-profile.component';
     SignupComponent,
     SigninComponent,
     ShoppingCartComponent,
-    EditPerfilComponent
+    EditPerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,5 +48,6 @@ import {EditPerfilComponent} from './edit-profile/edit-profile.component';
     multi: true
   }],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
