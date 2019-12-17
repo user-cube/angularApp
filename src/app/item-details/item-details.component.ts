@@ -30,11 +30,4 @@ export class ItemDetailsComponent implements OnInit {
     // Update Observable
     this.cartService.update(this.details);
   }
-
-  purchase() {
-    // For testing purposes (deletes local item storage)
-    localStorage.removeItem('items');
-    this.cartService.deleteAll();
-  }
-
 }

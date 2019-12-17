@@ -19,12 +19,6 @@
       </form>
 
     </div>
-    <div class="col-lg-1">
-      <form (ngSubmit)="purchase()" #addCart="ngForm">
-        <input name='id' value="{{ details.id }}" hidden>
-        <button type="submit" class="btn btn-success"><i class="fa fa-credit-card"></i></button>
-      </form>
-    </div>
     <div class="col-lg-12">
       <h2> {{ details.preco }}€</h2>
       <h5> {{ details.descricao }}</h5>

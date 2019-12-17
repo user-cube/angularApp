@@ -23,7 +23,7 @@
           <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
             <a class="nav-link" [routerLink]="['/list']">Encomendas</a>
           </li>
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+          <li *ngIf="isSuperUser()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
             <a class="nav-link" [routerLink]="['/adminPanel']">Painel de admin</a>
           </li>
           <li *ngIf="isSuperUser()" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
@@ -41,7 +41,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false"> {{nome}}
+               aria-haspopup="true" aria-expanded="false"> {{getName()}}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="/perfil">Perfil</a>
