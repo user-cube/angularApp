@@ -20,4 +20,8 @@ export class HomeService {
   getItems(): Observable<Items[]> {
     return this.http.get<Items[]>(this.baseUrl + '/items/all');
   }
+
+  search(value): Observable<Items[]> {
+    return this.http.get<Items[]>(this.baseUrl + '/items/' + value.search);
+  }
 }

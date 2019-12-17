@@ -49,9 +49,8 @@ export class CartPartialService {
   }
 
   deleteAll() {
-    this.products = JSON.parse(localStorage.getItem('items'));
     this.products = [];
-    localStorage.setItem('items', JSON.stringify(this.products));
+    localStorage.setItem('items', JSON.stringify([]));
     this.productObs.next(this.products);
   }
 }
